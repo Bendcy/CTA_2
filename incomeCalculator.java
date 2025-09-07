@@ -1,15 +1,18 @@
 import java.util.Scanner;
 
-public class incomeCalculator {
+// This program calculates tax withholding based on weekly income
+public class IncomeCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double weeklyIncome;
         double taxRate;
         double taxWithholding;
 
+        // Prompt user for weekly income
         System.out.println("Enter weekly income: ");
         weeklyIncome = scanner.nextDouble();
 
+        // Determine tax rate based on income brackets
         if (weeklyIncome < 500) {
             taxRate = 0.10;
         } else if (weeklyIncome < 1500) {
@@ -20,6 +23,8 @@ public class incomeCalculator {
             taxRate = 0.30;
         }
         taxWithholding = weeklyIncome * taxRate;
+
+        // Display the tax withholding
         System.out.printf("Tax withholding for weekly income of %.2f is: %.2f%n", weeklyIncome, taxWithholding);
         scanner.close();
     }
